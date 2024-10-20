@@ -13,6 +13,9 @@
 <p>PHP 8.2.24</p>
 <p>Laravel 11</p>
 
+<br>
+<hr>
+
 <h2>Funcionalidades</h2>
 <ul>
     <li><strong>Criar um novo pedido:</strong> Permite que o cliente envie os detalhes de um novo bloco 3D.</li>
@@ -23,11 +26,25 @@
     <li><strong>Ver Documentação:</strong>Permite visualizar a documentação da Api com as rotas e os endpoints disponíveis</li>
 </ul>
 
+<br>
+<hr>
+
+<h2>Exemplo de Uso:</h2>
+<p>Para criar um novo pedido, você pode utilizar uma ferramenta como Postman ou Bruno para enviar uma requisição POST para <code>/pedidos</code> com o corpo JSON apropriado.</p>
+
+<br>
+<hr>
+
 <h2>Rotas da API</h2>
+
+<br>
+<hr>
+
 <h3>1. Listar todos os pedidos</h3>
 <pre><code>GET /pedidos</code></pre>
 <p>Retorna uma lista de todos os pedidos em formato JSON.</p>
-
+<hr>
+<br>
 <h3>2. Criar um novo pedido</h3>
 <pre><code>POST /pedidos</code></pre>
 <p>Cria um novo pedido. O corpo da requisição deve ser um JSON com o seguinte formato:</p>
@@ -54,14 +71,16 @@
 <p>Remove um pedido do sistema, onde <code>{id}</code> é o ID do pedido a ser excluído.</p>
 
 <h3>6. Documentação</h3>
-<pre><code>DOCS /docs</code></pre>
+<pre><code>DOCUMENTAÇÃO /docs</code></pre>
 <p>Visualiza as requisições e os endpoints disponíveis em JSON</p>
 
-<h2>Exemplo de Uso:</h2>
-<p>Para criar um novo pedido, você pode utilizar uma ferramenta como Postman ou Bruno para enviar uma requisição POST para <code>/pedidos</code> com o corpo JSON apropriado.</p>
+<img src="/img/retorno.png" alt="Retorno Esperado" style="width: 1000px">
+<p>Retorno Esperado para a rota <code>/docs</code></p>
 
 <footer style="display:flex; justify-content: center">
-    <a href="https://github.com/codebyazeredo">github.com/codebyazeredo</a>
+    <li>Para mais informações leia o Read.me em
+        <a href="https://github.com/codebyazeredo">github.com/codebyazeredo</a>
+    </li>
 </footer>
 </body>
 </html>
