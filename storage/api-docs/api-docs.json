@@ -1,0 +1,198 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de Pedidos 3D",
+        "description": "API para gerenciamento de pedidos de blocos 3D personalizados",
+        "version": "1.0"
+    },
+    "paths": {
+        "/pedidos": {
+            "get": {
+                "summary": "Listar todos os pedidos",
+                "operationId": "a199173bdc5d7b882c1414cc6d087637",
+                "responses": {
+                    "200": {
+                        "description": "Lista de pedidos",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Pedido"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Criar um novo pedido",
+                "operationId": "975777620150e86f5e219c41f778f7f7",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Pedido"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Pedido criado com sucesso"
+                    }
+                }
+            }
+        },
+        "/pedidos/{id}": {
+            "get": {
+                "summary": "Obter um pedido pelo ID",
+                "operationId": "274ca0a353877a7a09abdccd797054a0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do pedido",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detalhes do pedido",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Pedido"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Pedido não encontrado"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Atualizar um pedido existente",
+                "operationId": "d38386539be39d056dfcba55bd8b59df",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do pedido",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Pedido"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Pedido atualizado com sucesso"
+                    },
+                    "404": {
+                        "description": "Pedido não encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Excluir um pedido",
+                "operationId": "607f16a0fcf17364eac24a1afaaedc44",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do pedido",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Pedido excluído com sucesso"
+                    },
+                    "404": {
+                        "description": "Pedido não encontrado"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Pedido": {
+                "required": [
+                    "andares",
+                    "cor1",
+                    "cor2",
+                    "cor3",
+                    "desenho1",
+                    "desenho2",
+                    "desenho3"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "ID do pedido",
+                        "type": "integer"
+                    },
+                    "andares": {
+                        "description": "Número de andares",
+                        "type": "integer"
+                    },
+                    "cor1": {
+                        "description": "Primeira cor",
+                        "type": "string"
+                    },
+                    "cor2": {
+                        "description": "Segunda cor",
+                        "type": "string"
+                    },
+                    "cor3": {
+                        "description": "Terceira cor",
+                        "type": "string"
+                    },
+                    "desenho1": {
+                        "description": "Primeiro desenho",
+                        "type": "string"
+                    },
+                    "desenho2": {
+                        "description": "Segundo desenho",
+                        "type": "string"
+                    },
+                    "desenho3": {
+                        "description": "Terceiro desenho",
+                        "type": "string"
+                    },
+                    "created_at": {
+                        "description": "Data de criação",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "description": "Data de atualização",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
