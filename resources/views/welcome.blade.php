@@ -5,32 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Documentação API')</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        pre {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            overflow-x: auto;
-        }
-        code {
-            background-color: #e8e8e8;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-        ul {
-            list-style-type: none;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
 <h1>Documentação da API - Pedidos de Blocos 3D</h1>
@@ -45,6 +20,7 @@
     <li><strong>Obter detalhes de um pedido:</strong> Permite consultar os detalhes de um pedido específico pelo ID.</li>
     <li><strong>Atualizar um pedido existente:</strong> Permite modificar as informações de um pedido já existente.</li>
     <li><strong>Excluir um pedido:</strong> Remove um pedido do sistema.</li>
+    <li><strong>Ver Documentação:</strong>Permite visualizar a documentação da Api com as rotas e os endpoints disponíveis</li>
 </ul>
 
 <h2>Rotas da API</h2>
@@ -77,11 +53,15 @@
 <pre><code>DELETE /pedidos/{id}</code></pre>
 <p>Remove um pedido do sistema, onde <code>{id}</code> é o ID do pedido a ser excluído.</p>
 
-<h2>Exemplo de Uso</h2>
-<p>Para criar um novo pedido, você pode usar uma ferramenta como Postman ou um script em sua linguagem de programação preferida para enviar um pedido POST para <code>/pedidos</code> com o corpo JSON apropriado.</p>
+<h3>6. Documentação</h3>
+<pre><code>DOCS /docs</code></pre>
+<p>Visualiza as requisições e os endpoints disponíveis em JSON</p>
 
-<footer>
-    <p>codebyazeredo</p>
+<h2>Exemplo de Uso:</h2>
+<p>Para criar um novo pedido, você pode utilizar uma ferramenta como Postman ou Bruno para enviar uma requisição POST para <code>/pedidos</code> com o corpo JSON apropriado.</p>
+
+<footer style="display:flex; justify-content: center">
+    <a href="https://github.com/codebyazeredo">github.com/codebyazeredo</a>
 </footer>
 </body>
 </html>
